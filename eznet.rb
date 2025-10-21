@@ -9,11 +9,7 @@ class Eznet < Formula
   depends_on "python@3.12"
 
   def install
-    # Create a virtual environment
-    venv = virtualenv_create(libexec, "python3.12")
-    
-    # Install the package in the virtual environment
-    venv.pip_install_and_link buildpath
+    virtualenv_install_with_resources
   end
 
   test do
